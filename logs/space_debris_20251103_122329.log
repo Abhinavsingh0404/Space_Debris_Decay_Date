@@ -1,0 +1,23 @@
+2025-11-03 12:23:30,940 - main - INFO - Space Debris Decay Prediction System
+2025-11-03 12:23:30,941 - main - INFO - ==================================================
+2025-11-03 12:23:30,941 - main - INFO - Starting pipeline execution...
+2025-11-03 12:23:30,941 - data_loader - INFO - Loading dataset...
+2025-11-03 12:23:31,033 - data_loader - INFO - Dataset loaded successfully. Shape: (14372, 40)
+2025-11-03 12:23:31,035 - data_loader - INFO - Creating target variable...
+2025-11-03 12:23:31,039 - data_loader - INFO - Launch dates: 14333 valid, 39 missing
+2025-11-03 12:23:31,040 - data_loader - INFO - Decay dates: 0 valid, 14372 missing
+2025-11-03 12:23:31,043 - data_loader - INFO - Target variable created. Valid samples: 0/14372
+2025-11-03 12:23:31,044 - data_loader - WARNING - No valid decay dates found. We'll need to estimate them.
+2025-11-03 12:23:31,044 - data_loader - INFO - Estimating missing decay dates...
+2025-11-03 12:23:31,044 - data_loader - INFO - Missing decay dates before estimation: 14372
+2025-11-03 12:23:36,059 - data_loader - INFO - Handling 39 samples with missing launch dates...
+2025-11-03 12:23:36,063 - data_loader - INFO - Assigned median decay days (3650.0) to samples with missing launch dates
+2025-11-03 12:23:36,063 - data_loader - INFO - Estimated 14372 decay dates. Remaining missing: 0
+2025-11-03 12:24:58,095 - main - INFO - Pipeline executed successfully!
+2025-11-03 12:24:58,096 - main - INFO - Final Model Performance:
+2025-11-03 12:24:58,096 - main - INFO -   RMSE: 179.41 days
+2025-11-03 12:24:58,096 - main - INFO -   MAE:  4.44 days
+2025-11-03 12:24:58,096 - main - INFO -   R²:   0.9987
+2025-11-03 12:24:58,097 - main - INFO -   Models saved in: models/
+2025-11-03 12:24:58,097 - main - INFO -   Plots saved in: output/plots/
+2025-11-03 12:24:58,097 - main - INFO - EXCELLENT: Model performance is outstanding!

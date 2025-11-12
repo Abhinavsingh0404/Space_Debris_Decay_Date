@@ -1,0 +1,16 @@
+2025-11-03 12:24:59,070 - data_loader - INFO - Testing data_loader module directly
+2025-11-03 12:24:59,070 - data_loader - INFO - Loading dataset...
+2025-11-03 12:24:59,161 - data_loader - INFO - Dataset loaded successfully. Shape: (14372, 40)
+2025-11-03 12:24:59,161 - data_loader - INFO - Creating target variable...
+2025-11-03 12:24:59,165 - data_loader - INFO - Launch dates: 14333 valid, 39 missing
+2025-11-03 12:24:59,166 - data_loader - INFO - Decay dates: 0 valid, 14372 missing
+2025-11-03 12:24:59,169 - data_loader - INFO - Target variable created. Valid samples: 0/14372
+2025-11-03 12:24:59,170 - data_loader - WARNING - No valid decay dates found. We'll need to estimate them.
+2025-11-03 12:24:59,170 - data_loader - INFO - No valid decay dates found. Estimating...
+2025-11-03 12:24:59,170 - data_loader - INFO - Estimating missing decay dates...
+2025-11-03 12:24:59,171 - data_loader - INFO - Missing decay dates before estimation: 14372
+2025-11-03 12:25:04,051 - data_loader - INFO - Handling 39 samples with missing launch dates...
+2025-11-03 12:25:04,056 - data_loader - INFO - Assigned median decay days (3650.0) to samples with missing launch dates
+2025-11-03 12:25:04,056 - data_loader - INFO - Estimated 14372 decay dates. Remaining missing: 0
+2025-11-03 12:25:04,062 - data_loader - INFO - Final dataset: 14372 samples with target variable
+2025-11-03 12:25:04,062 - data_loader - INFO - Data loader test completed successfully!
