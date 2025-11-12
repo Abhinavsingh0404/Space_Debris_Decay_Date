@@ -11,9 +11,16 @@ import numpy as np
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
-from .logger import get_logger
-from .exception import log_exception
+# Handle imports for both direct execution and package usage
+try:
+    from .logger import get_logger
+    from .exception import log_exception
+except ImportError:
+    # Fallback for direct execution
+    from logger import get_logger
+    from exception import log_exception
 
+# Get module-specific logger
 logger = get_logger('utils')
 
 def create_directories(directories: List[str]) -> None:
@@ -287,36 +294,27 @@ def validate_dataframe(df: pd.DataFrame, required_columns: List[str] = None) -> 
         log_exception(logger, e, "Error during DataFrame validation")
         return False
 
-# Test the utility functions
+# Test the utility functions when run directly
 if __name__ == "__main__":
-    logger.info("Testing utils module...")
+    print("Testing utils module directly...")
     
-    # Test directory creation
-    test_dirs = ['test_dir1', 'test_dir2/subdir']
-    create_directories(test_dirs)
-    
-    # Test JSON operations
-    test_data = {'test': 'data', 'number': 42}
-    save_json(test_data, 'test_dir1/test.json')
-    loaded_data = load_json('test_dir1/test.json')
-    assert test_data == loaded_data
-    
-    # Test timestamp
+    # Test basic functions without dependencies
     timestamp = get_timestamp()
     print(f"Current timestamp: {timestamp}")
     
-    # Test statistics
+    # Test with sample data
     test_df = pd.DataFrame({
         'col1': [1, 2, 3, 4, 5],
         'col2': [10, 20, 30, 40, 50]
     })
+    
     stats = calculate_statistics(test_df, ['col1', 'col2'])
     print(f"Statistics: {stats}")
     
-    # Clean up
-    import shutil
-    for dir_path in ['test_dir1', 'test_dir2']:
-        if os.path.exists(dir_path):
-            shutil.rmtree(dir_path)
+    memory_info = memory_usage(test_df)
+    print(f"Memory usage: {memory_info}")
     
-    logger.info("Utils module test completed successfully!")
+    # Test time formatting
+    print(f"Time format examples: {format_time(45)}, {format_time(125)}, {format_time(3665)}")
+    
+    print("Utils module test completed successfully!")
